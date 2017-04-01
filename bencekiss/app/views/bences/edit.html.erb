@@ -1,0 +1,22 @@
+<h1>Bence#edit</h1>
+<%= form_for @bence do |f| %>
+  <div class="fields">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="fields">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="fields">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="fields">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="action">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

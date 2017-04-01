@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bencekiss</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul class="navlist">
+          <li class="navelem">
+            <%= link_to "Home", root_path %>
+          </li>
+          <li class="navelem">
+            <%= link_to "Education", bence_edus_path(Bence.first) %>
+          </li>
+          <li class="navelem">
+            <%= link_to "Works", bence_works_path(Bence.first) %>
+          </li>
+          <li class="navelem">
+            <%= link_to "Projects", bence_projects_path(Bence.first) %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <%= image_tag "https://s3.us-east-2.amazonaws.com/bencekissfirst/resume/background_2.png" %>
+      <div class="flashes">
+        <% if flash[:notice] %>
+          <p id="notice"><%= flash[:notice] %></p>
+        <% end %>
+        <% if flash[:alert] %>
+          <p id="alert"><%= flash[:alert] %></p>
+        <% end %>
+      </div>
+      <%= yield %>
+    </main>
+    <footer>
+      <ul class="footerlist">
+        <li class="footerelement"><%= Bence.first.email %></li>
+        <li class="footerelement"><%= Bence.first.phone %></li>
+      </ul>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<% @tables.each do |table| %>
+  <% table.meals.each do |meal| %>
+    <section id="slide-<%= meal.id %>">
+      <div class="bcg"
+           style="background-image: url(<%= meal.url %>); min-height: 100%;"
+           data-center ="background-position: 50% 0px;"
+           data-top-bottom="background-position: 50% -100px;"
+           data-anchor-target="#slide-<%= meal.id %>"
+      >
+        <div class="hsContainer">
+          <div class="hsContent"
+               data-center="bottom: 200px; opacity: 1"
+               data-top="bottom: 1200px; opacity: 0"
+               data-anchor-target="#slide-<%= meal.id %> h2"
+          >
+            <h2><%= meal.name %></h2>
+          </div>
+        </div>
+      </div>
+    </section>
+  <% end %>
+<% end %>

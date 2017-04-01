@@ -1,0 +1,66 @@
+@import "variables";
+
+
+@media only screen and (min-width: 1024px) {
+  header {
+    position: absolute;
+    width: 100%;
+    background: lightgray;
+    z-index: 1;
+    opacity: 0.7;
+
+    ul.navlist {
+        list-style: none;
+        overflow: auto;
+    }
+    li.navelem {
+      float: left;
+      width: 25%;
+      padding: 5px 0 5px 25px;
+      a{
+        font-size: 1.1em;
+        text-decoration: none;
+        text-transform: lowercase;
+        letter-spacing: 0.1em;
+        color: $primaryfontcolor;
+      }
+      a:hover{
+        border-left: 1px solid $primaryfontcolor;
+        border-right: 1px solid $primaryfontcolor;
+      }
+    }
+  }
+
+  main{
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0.7;
+      z-index: 0;
+    }
+    position: relative;
+    width: 100%;
+  }
+
+  footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(211, 211, 211, 0.7);
+    height: 30px;
+    .footerlist{
+      list-style: none;
+      overflow: auto;
+
+      .footerelement{
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding-top: 5px;
+      }
+    }
+  }
+}
